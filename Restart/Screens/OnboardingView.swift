@@ -16,16 +16,19 @@ struct OnboardingView: View {
     // MARK: - BODY
     
     var body: some View {
-        VStack(spacing: 20) {
-            Text("Onboarding")
-                .font(.largeTitle)
+        ZStack {
+            Color("ColorBlue")
+                .ignoresSafeArea(.all, edges: .all)
             
-            Button(action: {
-                isOnboardingViewActive = false
-            }) {
-                Text("Start")
-            }
-        } //: VSTACK
+            VStack(spacing: 20) {
+                // MARK: - HEADER
+                
+                // MARK: - CENTER
+                
+                // MARK: - FOOTER
+                
+            } //: VSTACK
+        } //: ZSTACK
     }
 }
 
