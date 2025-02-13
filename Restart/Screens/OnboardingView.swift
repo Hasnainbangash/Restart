@@ -113,7 +113,6 @@ struct OnboardingView: View {
                         
                         Spacer()
                     } //: HSTACK
-                    
                 } //: FOOTER
                 .frame(height: 80, alignment: .center)
                 .padding()
