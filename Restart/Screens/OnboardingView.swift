@@ -77,6 +77,15 @@ struct OnboardingView: View {
                     
                     // 2. CALL-TO-ACTION (STATIC)
                     // 3. CAPSULE (DYNAMIC WIDTH)
+                    
+                    HStack {
+                        Capsule()
+                            .fill(Color("ColorRed"))
+                            .frame(width: 80)
+                        
+                        Spacer()
+                    }
+                    
                     // 4. CIRCLE (DRAGGABLE)
                     
                 } //: FOOTER
