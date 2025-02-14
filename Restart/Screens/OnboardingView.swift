@@ -82,6 +82,12 @@ struct OnboardingView: View {
                         ) //: GESTURE
                         .animation(Animation.easeOut(duration: 1), value: imageOffset)
                 } //: CENTER
+                .overlay(
+                    Image(systemName: "arrow.left.and.right.circle")
+                        .font(.system(size: 44, weight: .ultraLight))
+                        .foregroundColor(.white)
+                    , alignment: .bottom
+                )
                 
                 Spacer()
                 
