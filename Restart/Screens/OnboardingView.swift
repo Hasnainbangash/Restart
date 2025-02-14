@@ -13,6 +13,9 @@ struct OnboardingView: View {
     // This code is identical to previous one, it seems that we are setting a new value for this property again, but in reality this special app storage property wrapper works differently. This true value will only be added to this property when the ptogram doesnot find the onboarding key in the user default storage. In summary if our program finds the onboarding key in the user default storage, then it will skip this initialization and since we have initiliazed this onboarding key in the previous file(ContentView) therefore the end part of this code will be ignored. So this is how we access the previously stored value of the onboarding key.
     @AppStorage("onboarding") var isOnboardingViewActive: Bool = true
     
+    @State private var buttonWidth: Double = UIScreen.main.bounds.width - 80
+    @State private var buttonOffset: CGFloat = 0
+    
     // MARK: - BODY
     
     var body: some View {
