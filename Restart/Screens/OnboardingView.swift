@@ -192,6 +192,7 @@ struct OnboardingView: View {
         .onAppear {
             isAnimating = true
         }
+        // It forces the UI to use dark mode
         .preferredColorScheme(.dark)
     }
 }
