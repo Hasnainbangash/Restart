@@ -55,6 +55,10 @@ struct OnboardingView: View {
                 
                 ZStack {
                     CircleGroupView(ShapeColor: .white, ShapeOpacity: 0.2)
+                        // Making the offset value opposite so it moved opposite direction to the image dragging
+                        .offset(x: imageOffset.width * -1)
+                        .blur(radius: abs(imageOffset.width / 5))
+                        .animation(.easeOut(duration: 1), value: imageOffset)
                     
                     Image("character-1")
                         .resizable()
