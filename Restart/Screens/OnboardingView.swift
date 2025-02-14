@@ -38,6 +38,8 @@ struct OnboardingView: View {
                         .font(.system(size: 60))
                         .fontWeight(.heavy)
                         .foregroundColor(.white)
+                        .transition(.opacity)
+                        .id(textTitle)
                     
                     Text("""
                     It's not how much we give but
@@ -78,6 +80,7 @@ struct OnboardingView: View {
                                         imageOffset = gesture.translation
                                         withAnimation(.linear(duration: 0.25)) {
                                             indicatorOpacity = 0
+                                            textTitle = "Give."
                                         }
                                     }
                                 }
@@ -85,6 +88,7 @@ struct OnboardingView: View {
                                     imageOffset = .zero
                                     withAnimation(.linear(duration: 0.25)) {
                                         indicatorOpacity = 1
+                                        textTitle = "Share."
                                     }
                                 }
                         ) //: GESTURE
