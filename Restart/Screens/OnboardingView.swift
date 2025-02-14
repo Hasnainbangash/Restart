@@ -62,6 +62,8 @@ struct OnboardingView: View {
                         .opacity(isAnimating ? 1 : 0)
                         .animation(.easeOut(duration: 0.5), value: isAnimating)
                         .offset(x: imageOffset.width * 1.2, y: 0)
+                        // Added a rotaion method to rotate the image along with the dragging
+                        .rotationEffect(.degrees(Double(imageOffset.width / 20)))
                         .gesture(
                             DragGesture()
                                 .onChanged{ gesture in
