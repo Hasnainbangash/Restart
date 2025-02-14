@@ -65,7 +65,10 @@ struct OnboardingView: View {
                         .gesture(
                             DragGesture()
                                 .onChanged{ gesture in
-                                    imageOffset = gesture.translation
+                                    // This conditions stops the image to be dragger outside the view
+                                    if abs(imageOffset.width) <= 150 {
+                                        imageOffset = gesture.translation
+                                    }
                                 }
                         ) //: GESTURE
                 } //: CENTER
