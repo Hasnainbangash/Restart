@@ -106,16 +106,20 @@ struct OnboardingView: View {
                         .offset(x: buttonOffset)
                         .gesture(
                             DragGesture()
+                            // This code runs when the button is getting dragged
                                 .onChanged{ gesture in
                                     if gesture.translation.width > 0 && buttonOffset <= buttonWidth - 80 {
                                         buttonOffset = gesture.translation.width
                                     }
                                 }
+                                // This code runs when the drag is completed
                                 .onEnded{ _ in
+                                    // If the button dragable cross the middle than the next button gets open
                                     if buttonOffset > buttonWidth / 2 {
                                         buttonOffset = buttonWidth - 80
                                         isOnboardingViewActive = false
                                     } else {
+                                        // If the button dragable won't cross the middle than the button gets back to its position
                                         buttonOffset = 0
                                     }
                                 }
