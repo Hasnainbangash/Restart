@@ -19,6 +19,7 @@ struct OnboardingView: View {
     // @State private var imageOffset: CGSize = CGSize(width: 0, height: 0)
     @State private var imageOffset: CGSize = .zero
     @State private var indicatorOpacity: Double = 1.0
+    @State private var textTitle: String = "Share."
     
     // MARK: - BODY
     
@@ -33,7 +34,7 @@ struct OnboardingView: View {
                 Spacer()
                 
                 VStack(spacing: 0) {
-                    Text("Share.")
+                    Text(textTitle)
                         .font(.system(size: 60))
                         .fontWeight(.heavy)
                         .foregroundColor(.white)
