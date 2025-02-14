@@ -18,6 +18,7 @@ struct OnboardingView: View {
     @State private var isAnimating: Bool = false
     // @State private var imageOffset: CGSize = CGSize(width: 0, height: 0)
     @State private var imageOffset: CGSize = .zero
+    @State private var indicatorOpacity: Double = 1.0
     
     // MARK: - BODY
     
@@ -74,10 +75,16 @@ struct OnboardingView: View {
                                     // This conditions stops the image to be dragger outside the view
                                     if abs(imageOffset.width) <= 150 {
                                         imageOffset = gesture.translation
+                                        withAnimation(.linear(duration: 0.25)) {
+                                            indicatorOpacity = 0
+                                        }
                                     }
                                 }
                                 .onEnded{ _ in
                                     imageOffset = .zero
+                                    withAnimation(.linear(duration: 0.25)) {
+                                        indicatorOpacity = 1
+                                    }
                                 }
                         ) //: GESTURE
                         .animation(Animation.easeOut(duration: 1), value: imageOffset)
@@ -90,6 +97,7 @@ struct OnboardingView: View {
                         .opacity(isAnimating ? 1 : 0)
                         // This animation will show the arrow image after 2 seconds delay the screen loads
                         .animation(.easeOut(duration: 1).delay(2), value: isAnimating)
+                        .opacity(indicatorOpacity)
                     , alignment: .bottom
                 )
                 
