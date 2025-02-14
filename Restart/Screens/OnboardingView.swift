@@ -70,6 +70,9 @@ struct OnboardingView: View {
                                         imageOffset = gesture.translation
                                     }
                                 }
+                                .onEnded{ _ in
+                                    imageOffset = .zero
+                                }
                         ) //: GESTURE
                 } //: CENTER
                 
