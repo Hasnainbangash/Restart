@@ -74,6 +74,7 @@ struct OnboardingView: View {
                                     imageOffset = .zero
                                 }
                         ) //: GESTURE
+                        .animation(Animation.easeOut(duration: 1), value: imageOffset)
                 } //: CENTER
                 
                 Spacer()
