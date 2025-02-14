@@ -64,6 +64,12 @@ struct HomeView: View {
             .buttonBorderShape(.capsule)
             .controlSize(.large)
         } //: VSTACK
+        .onAppear {
+            // This will start the animating after the 0.5 seconds from now
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5 , execute: {
+                isAnimating = true
+            })
+        }
     }
 }
 
