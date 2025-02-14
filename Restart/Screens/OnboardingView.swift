@@ -39,6 +39,7 @@ struct OnboardingView: View {
                         .fontWeight(.heavy)
                         .foregroundColor(.white)
                         .transition(.opacity)
+                        // We will have to give the identifiable views knows as id becuase sometimes transition won't work
                         .id(textTitle)
                     
                     Text("""
@@ -191,6 +192,7 @@ struct OnboardingView: View {
         .onAppear {
             isAnimating = true
         }
+        .preferredColorScheme(.dark)
     }
 }
 
