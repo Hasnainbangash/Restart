@@ -61,6 +61,13 @@ struct OnboardingView: View {
                         .scaledToFit()
                         .opacity(isAnimating ? 1 : 0)
                         .animation(.easeOut(duration: 0.5), value: isAnimating)
+                        .offset(x: imageOffset.width * 1.2, y: 0)
+                        .gesture(
+                            DragGesture()
+                                .onChanged{ gesture in
+                                    imageOffset = gesture.translation
+                                }
+                        ) //: GESTURE
                 } //: CENTER
                 
                 Spacer()
