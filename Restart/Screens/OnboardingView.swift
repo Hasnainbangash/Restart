@@ -86,6 +86,10 @@ struct OnboardingView: View {
                     Image(systemName: "arrow.left.and.right.circle")
                         .font(.system(size: 44, weight: .ultraLight))
                         .foregroundColor(.white)
+                        .offset(y: 20)
+                        .opacity(isAnimating ? 1 : 0)
+                        // This animation will show the arrow image after 2 seconds delay the screen loads
+                        .animation(.easeOut(duration: 1).delay(2), value: isAnimating)
                     , alignment: .bottom
                 )
                 
