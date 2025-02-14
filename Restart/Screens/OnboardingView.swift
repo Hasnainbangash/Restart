@@ -176,7 +176,7 @@ struct OnboardingView: View {
                                             buttonOffset = buttonWidth - 80
                                             isOnboardingViewActive = false
                                         } else {
-                                            hapticFeedback.notificationOccurred(.error)
+                                            hapticFeedback.notificationOccurred(.warning)
                                             // If the button dragable won't cross the middle than the button gets back to its position
                                             buttonOffset = 0
                                         }
